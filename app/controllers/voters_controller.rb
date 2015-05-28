@@ -22,7 +22,7 @@ class VotersController < ApplicationController
   def update
     voter = Voter.find_by_id
     voter.name = "Dave"
-    voter.save 
+    voter.save
   end
 
 

@@ -11,11 +11,13 @@ class CandidatesControllerTest < ActionController::TestCase
   end
 
   test "shows selected candidate" do
-    get :show
-    politician = Candidate.create(name: "Bush III", hometown: "Dallas,TX" , district: 1, party: "GOP" )
+
+    politician = Candidate.create(name: "#{Faker::Name.name}", hometown: "Dallas,TX" , district: 1, party: "GOP" )
     politician = Candidate.create(name: "#{Faker::Name.name}", hometown: "Seattle" , district: 1, party: "GOP")
-    get :show
-    #byebug
-    assert_equal 1, selected_politician.count
+    variable = get :show
+    assert_response :success 
+    assert_equal 1, variable
   end
+
+
 end

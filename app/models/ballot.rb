@@ -4,6 +4,5 @@ class Ballot < ActiveRecord::Base
 
   validates :voter_id, presence: true, uniqueness: true
   validates :candidate_id, presence: true
-
-
+  
 end
